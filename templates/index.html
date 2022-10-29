@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .container {
+              position: relative;
+              width: 100%;
+              max-width: 400px;
+            }
+            
+            .container img {
+              width: 100%;
+              height: auto;
+            }
+            
+            .container .btn {
+              position: absolute;
+              top: 100%;
+              left: 100%;
+              /* transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%); */
+              background-color: #555;
+              color: white;
+              font-size: 16px;
+              padding: 24px 24px;
+              border: none;
+              cursor: pointer;
+              border-radius: 12px;
+              text-align: center;
+            }
+            
+            .container .btn:hover {
+              background-color: black;
+            }
+        </style>
+        <title>Diplom</title> 
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="bd-example" align="middle">
+            <center><h1>Дипломная работа</h1></center>
+            <center><img src = "{{ url_for('video_feed') }}" width=720 height=480/></center>
+            <center><h2>Выполнили: Соколов Никита и Березин Марк</h2></center>
+        </div>
+        <div class="container">
+            <form method="post" >
+                <input type="submit" class="btn" name="left" value="left">
+            </form>
+        </div>
+    </body>
+</html>
