@@ -2,51 +2,95 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <style>
-            .container {
-              position: relative;
-              width: 100%;
-              max-width: 400px;
-            }
-            
-            .container img {
-              width: 100%;
-              height: auto;
-            }
-            
-            .container .btn {
-              position: absolute;
-              top: 100%;
-              left: 100%;
-              /* transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%); */
-              background-color: #555;
-              color: white;
-              font-size: 16px;
-              padding: 24px 24px;
-              border: none;
-              cursor: pointer;
-              border-radius: 12px;
-              text-align: center;
-            }
-            
-            .container .btn:hover {
-              background-color: black;
-            }
-        </style>
         <title>Diplom</title> 
-        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <!-- <link rel="icon" href="/favicon.png"> -->
+        <link rel="shortcut icon" href="images/favicon.ico">
     </head>
     <body>
+
+        <style>      
+          
+          button {
+            position: absolute;
+            /* transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%); */
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 24px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            text-align: center;
+            float: left;
+          }
+          
+          button:hover {
+            background-color: black;
+          }
+
+          .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+          }
+
+          .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+
+          .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+          }
+
+          .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+          }
+
+          .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+        </style>
+        
+        <script>
+
+          function ExecPythonCommand(pythonCommand){
+            var request = new XMLHttpRequest()
+            request.open("GET", "/" + pythonCommand, true)
+            request.send()
+          }
+          
+        </script>
+
         <div class="bd-example" align="middle">
+
             <center><h1>Дипломная работа</h1></center>
             <center><img src = "{{ url_for('video_feed') }}" width=720 height=480/></center>
             <center><h2>Выполнили: Соколов Никита и Березин Марк</h2></center>
+
         </div>
-        <div class="container">
-            <form method="post" >
-                <input type="submit" class="btn" name="left" value="left">
-            </form>
+
+        <div class="wheels">
+          
+          <button style = "top: 85%; left: 360px;", onclick="ExecPythonCommand('left()')"><i class="arrow left"></i></button>
+          <button style = "top: 85%; left: 560px;", onclick="ExecPythonCommand('right()')"><i class="arrow right"></i></button>
+          <button style = "top: 75%; left: 460px;", onclick="ExecPythonCommand('forward()')"><i class="arrow up"></i></button>
+          <button style = "top: 95%; left: 460px;", onclick="ExecPythonCommand('back()')"><i class="arrow down"></i></button>
+
+        </div>
+
+        <div class="camera">
+          
+          <button style = "top: 85%; left: 810px;", onclick="ExecPythonCommand('left()')"><i class="arrow left"></i></button>
+          <button style = "top: 85%; left: 1010px;", onclick="ExecPythonCommand('right()')"><i class="arrow right"></i></button>
+          <button style = "top: 75%; left: 910px;", onclick="ExecPythonCommand('forward()')"><i class="arrow up"></i></button>
+          <button style = "top: 95%; left: 910px;", onclick="ExecPythonCommand('back()')"><i class="arrow down"></i></button>
+        
         </div>
     </body>
 </html>
