@@ -70,26 +70,81 @@
         <div class="bd-example" align="middle">
 
             <center><h1>Дипломная работа</h1></center>
-            <center><img src = "{{ url_for('video_feed') }}" width=720 height=480/></center>
+            <!-- <center><img src = "{{ url_for('video_feed') }}" width=720 height=480/></center> -->
             <center><h2>Выполнили: Соколов Никита и Березин Марк</h2></center>
 
         </div>
 
+        <script>
+          // wheels
+          $("#left").on("mousedown", function() {
+            ExecPythonCommand('left()')
+          });
+          $("#right").on("mousedown", function() {
+            ExecPythonCommand('right()')
+          });
+          $("#forward").on("mousedown", function() {
+            ExecPythonCommand('forward()')
+          });
+          $("#back").on("mousedown", function() {
+            ExecPythonCommand('back()')
+          });
+          // stop_wheels
+          $("#left").on("mouseup", function() {
+            ExecPythonCommand('stop()')
+          });
+          $("#right").on("mouseup", function() {
+            ExecPythonCommand('stop()')
+          });
+          $("#forward").on("mouseup", function() {
+            ExecPythonCommand('stop()')
+          });
+          $("#back").on("mouseup", function() {
+            ExecPythonCommand('stop()')
+          });
+
+          // servo
+          $("#left_servo").on("mousedown", function() {
+            ExecPythonCommand('left_servo()')
+          });
+          $("#right_servo").on("mousedown", function() {
+            ExecPythonCommand('right_servo())')
+          });
+          $("#up_servo").on("mousedown", function() {
+            ExecPythonCommand('up_servo()')
+          });
+          $("#down_servo").on("mousedown", function() {
+            ExecPythonCommand('down_servo()')
+          });
+          // stop_servo
+          $("#left_servo").on("mouseup", function() {
+            ExecPythonCommand('stop_servo()')
+          });
+          $("#right_servo").on("mouseup", function() {
+            ExecPythonCommand('stop_servo()')
+          });
+          $("#up_servo").on("mouseup", function() {
+            ExecPythonCommand('stop_servo()')
+          });
+          $("#down_servo").on("mouseup", function() {
+            ExecPythonCommand('stop_servo()')
+          });
+        </script>
         <div class="wheels">
           
-          <button style = "top: 85%; left: 360px;", onclick="ExecPythonCommand('left()')"><i class="arrow left"></i></button>
-          <button style = "top: 85%; left: 560px;", onclick="ExecPythonCommand('right()')"><i class="arrow right"></i></button>
-          <button style = "top: 75%; left: 460px;", onclick="ExecPythonCommand('forward()')"><i class="arrow up"></i></button>
-          <button style = "top: 95%; left: 460px;", onclick="ExecPythonCommand('back()')"><i class="arrow down"></i></button>
+          <button id = "left" style = "top: 85%; left: 360px;"><i class="arrow left"></i></button>
+          <button id = "right" style = "top: 85%; left: 560px;"><i class="arrow right"></i></button>
+          <button id = "forward" style = "top: 75%; left: 460px;"><i class="arrow up"></i></button>
+          <button id = "back" style = "top: 95%; left: 460px;"><i class="arrow down"></i></button>
 
         </div>
 
         <div class="camera">
           
-          <button style = "top: 85%; left: 810px;", onclick="ExecPythonCommand('left()')"><i class="arrow left"></i></button>
-          <button style = "top: 85%; left: 1010px;", onclick="ExecPythonCommand('right()')"><i class="arrow right"></i></button>
-          <button style = "top: 75%; left: 910px;", onclick="ExecPythonCommand('forward()')"><i class="arrow up"></i></button>
-          <button style = "top: 95%; left: 910px;", onclick="ExecPythonCommand('back()')"><i class="arrow down"></i></button>
+          <button id = "left_servo" style = "top: 85%; left: 810px;"><i class="arrow left"></i></button>
+          <button id = "right_servo" style = "top: 85%; left: 1010px;"><i class="arrow right"></i></button>
+          <button id = "up_servo" style = "top: 75%; left: 910px;"><i class="arrow up"></i></button>
+          <button id = "down_servo" style = "top: 95%; left: 910px;"><i class="arrow down"></i></button>
         
         </div>
     </body>
