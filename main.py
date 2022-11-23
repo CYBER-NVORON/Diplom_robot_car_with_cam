@@ -1,6 +1,6 @@
 from flask import Flask, Response, render_template, redirect, url_for, request, jsonify
 import time, random
-from AlphaBot import AlphaBot
+from Motor_Driver import Motor
 from camera_opencv import Camera
 import socket
 
@@ -65,7 +65,7 @@ def video_feed():
     return Response(videostreaming_generator(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    car = AlphaBot()
+    car = Motor()
     speed = 100
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8",80))

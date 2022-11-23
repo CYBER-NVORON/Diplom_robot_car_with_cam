@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-class AlphaBot(object):
+class Motor(object):
 	
 	def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
 		self.IN1 = in1

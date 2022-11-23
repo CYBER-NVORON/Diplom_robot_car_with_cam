@@ -1,3 +1,1 @@
 flask
-picamera
-open-cv
