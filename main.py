@@ -21,7 +21,7 @@ def right():
     car.right()
     print("Turn right")
 
-def back():
+def backward():
     car.backward()
     print("Turn back")
 
@@ -66,7 +66,7 @@ def video_feed():
 
 if __name__ == '__main__':
     car = AlphaBot()
-    speed = 50
+    speed = 100
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8",80))
     ip=s.getsockname()[0]
