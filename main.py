@@ -1,6 +1,7 @@
 from flask import Flask, Response, render_template, redirect, url_for, request, jsonify
 import time, random
 from Motor_Driver import Motor
+from Servo_Driver import Servo
 from camera_opencv import Camera
 import socket
 
@@ -34,19 +35,20 @@ def stop():
     print("Stop")
 
 def left_servo():
+    servo.setAngleServo1(-10)
     print("Turn left")
 
 def right_servo():
+    servo.setAngleServo1(10)
     print("Turn right")
 
 def down_servo():
-    print("Turn back")
+    servo.setAngleServo2(-10)
+    print("Turn down")
 
 def up_servo():
-    print("Turn straight")
-
-def stop_servo():
-    print("Stop")
+    servo.setAngleServo2(10)
+    print("Turn up")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -66,6 +68,7 @@ def video_feed():
 
 if __name__ == '__main__':
     car = Motor()
+    servo = Servo()
     speed = 100
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8",80))
