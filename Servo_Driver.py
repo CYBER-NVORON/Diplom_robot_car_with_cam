@@ -13,10 +13,10 @@ class Servo(object):
         GPIO.setup(s1,GPIO.OUT)
         GPIO.setup(s2,GPIO.OUT)
         self.stop()
-        self.SERVO1 = GPIO.PWM(s1,50)
-        self.SERVO2 = GPIO.PWM(s2,50)
-        self.SERVO1.start(5)
-        self.SERVO2.start(5)
+        self.SERVO1 = GPIO.PWM(s1,100)
+        self.SERVO2 = GPIO.PWM(s2,100)
+        self.SERVO1.start(0)
+        self.SERVO2.start(0)
 
     def stop(self):
         GPIO.output(self.S1,GPIO.LOW)
