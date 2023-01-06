@@ -2,7 +2,8 @@ from flask import Flask, Response, render_template, redirect, url_for, request, 
 import time, random
 from Motor_Driver import Motor
 from Servo_Driver import Servo
-from camera_opencv import Camera
+#from camera_opencv import Camera
+from pi_camera import Camera
 import socket
 
 app = Flask(__name__)
@@ -35,19 +36,19 @@ def stop():
     print("Stop")
 
 def left_servo():
-    servo.setAngleServo1(-10)
+    servo.ServoAngle1(angle = 10)
     print("Turn left")
 
 def right_servo():
-    servo.setAngleServo1(10)
+    servo.ServoAngle1(angle = -10)
     print("Turn right")
 
 def down_servo():
-    servo.setAngleServo2(-10)
+    servo.setAngleServo2(angle = 10)
     print("Turn down")
 
 def up_servo():
-    servo.setAngleServo2(10)
+    servo.setAngleServo2(angle = -10)
     print("Turn up")
 
 @app.route('/', methods=['GET', 'POST'])
